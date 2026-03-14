@@ -16,5 +16,5 @@ fn main() {
     let hash_output = hasher::hash().expect("failed to hash input");
 
     let hash_hex = hasher::hash_hex(&hash_output);
-    println!("Hash output: {}", hash_hex);
+    println!("\nHash output: {}", hash_hex);
 }
