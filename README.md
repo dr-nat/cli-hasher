@@ -27,4 +27,6 @@ To build and run this tool, you must have the following installed:
 Run the program by passing a string as an argument:
 
 ```bash
-cargo run <your_input_string>
+cargo run <your_input_string> 
+
+cargo run <file_path> -f
