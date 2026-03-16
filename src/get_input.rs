@@ -14,12 +14,13 @@ pub fn get_args() -> Result<String, Box<dyn Error>> {
 
     let user_input = args.get(1).ok_or("index out of bounds")?;
 
-    let flag_arg = args.get(2).ok_or("invalid flag")?;
+    if let Some(flag_arg) = args.get(2) {
 
-    let file_input = PathBuf::from(user_input);
+        let file_input = PathBuf::from(user_input);
 
-    if flag_arg == "-f" && user_input != "" {
-        return Ok(read_to_string(&file_input)?);
+        if user_input != "" && flag_arg == "-f" {
+            return Ok(read_to_string(&file_input)?);
+        }
     }
     
     Ok(user_input.to_string())
